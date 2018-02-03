@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: rgb(255, 253, 232);
 }
 
 header {
@@ -8,6 +9,12 @@ header {
   font-size: 3em;
   margin-bottom: 1em;
   padding: 0.2em;
+}
+
+#search {
+  display: block;
+  margin: 0 auto 2em auto;
+  width: 11.8em;
 }
 
 #articles-container {
@@ -30,7 +37,7 @@ article {
 }
 
 img {
-  max-width: 20em;
+  max-height: 10em;
   margin: 0.5em auto;
 
 }

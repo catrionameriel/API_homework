@@ -45,7 +45,10 @@ var app = function() {
             'from=2018-02-03&' +
             'sortBy=popularity&' +
             'apiKey=' + key;
-  makeRequest(url, requestComplete);
+  var button = document.querySelector('#search-button');
+  button.addEventListener('click', function() {
+    makeRequest(url, requestComplete);
+  })
 }
 
 window.addEventListener('load', app)
