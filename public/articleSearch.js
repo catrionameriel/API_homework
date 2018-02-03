@@ -4,7 +4,6 @@ var ArticleSearch = function(search, key) {
               'from=2018-02-03&' +
               'sortBy=popularity&' +
               'apiKey=' + key;
-  this.data = [];
 }
 
 ArticleSearch.prototype.getData = function () {
@@ -14,7 +13,54 @@ ArticleSearch.prototype.getData = function () {
     if (newRequest.status !== 200) return;
     var string = JSON.parse(newRequest.responseText)
     var newsSearch = string.articles;
-    this.data.push(newsSearch);
+    this.data = newsSearch;
+    console.log(newsSearch);
+    this.showStories(newsSearch);
+    this.showImages(newsSearch);
+    this.showLink(newsSearch);
   }.bind(this))
   newRequest.send();
+};
+
+
+ArticleSearch.prototype.showStories = function (data) {
+  var number = 0;
+  var container = document.querySelector('#articles-container');
+  data.forEach(function(story) {
+    var article = document.createElement('article');
+    var title = document.createElement('h2');
+    var p = document.createElement('p');
+    title.innerText = story.title;
+    p.innerText = story.source.name;
+    article.id = number;
+    article.appendChild(title);
+    article.appendChild(p);
+    container.appendChild(article);
+    number ++;
+  })
+};
+
+ArticleSearch.prototype.showImages = function (data) {
+  var number = 0;
+  data.forEach(function(story) {
+    var article = document.getElementById(number);
+    img = document.createElement('img');
+    img.src = story.urlToImage;
+    article.appendChild(img);
+    number ++;
+  })
+};
+
+ArticleSearch.prototype.showLink = function (data) {
+  var number = 0;
+  data.forEach(function(story) {
+    var article = document.getElementById(number);
+    var link = document.createElement('a');
+    link.href = story.url
+    link.target = "_blank"
+    link.title = story.title;
+    link.innerText = "Read more";
+    article.appendChild(link);
+    number ++;
+  })
 };
