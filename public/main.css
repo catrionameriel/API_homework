@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+}
+
+header {
+  font-family: futura;
+  background-color: rgb(255, 217, 2);
+  font-size: 3em;
+  margin-bottom: 1em;
+  padding: 0.2em;
+}
+
+#articles-container {
+  display: grid;
+  justify-content: center;
+  grid-gap: 1em;
+}
+
+article {
+  display: grid;
+  justify-content: center;
+  border: 0.05em solid black;
+  align-items: center;
+  font-family: verdana;
+  font-size: 1.1em;
+  max-width: 30em;
+  padding: 0.2em;
+  align-content: center;
+  text-align: center;
+}
+
+img {
+  max-width: 20em;
+  margin: 0.5em auto;
+
+}
