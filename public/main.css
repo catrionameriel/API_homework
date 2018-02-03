@@ -70,6 +70,8 @@ article {
   padding: 1em;
   align-content: center;
   text-align: center;
+  background-color: white;
+  box-shadow: 0 0 0.1em black;
 }
 
 h2 {
