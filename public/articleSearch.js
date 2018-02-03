@@ -1,5 +1,5 @@
 var ArticleSearch = function(search, key) {
-  this.url = 'https://newsapi.org/v2/everything?' +
+  this.url = 'https://newsapi.org/v2/top-headlines?' +
               'q=' + search + '&' +
               'from=2018-02-03&' +
               'sortBy=popularity&' +
@@ -14,7 +14,6 @@ ArticleSearch.prototype.getData = function () {
     var string = JSON.parse(newRequest.responseText)
     var newsSearch = string.articles;
     this.data = newsSearch;
-    console.log(newsSearch);
     this.showStories(newsSearch);
     this.showImages(newsSearch);
     this.showLink(newsSearch);
@@ -26,6 +25,7 @@ ArticleSearch.prototype.getData = function () {
 ArticleSearch.prototype.showStories = function (data) {
   var number = 0;
   var container = document.querySelector('#articles-container');
+  container.innerHTML = " ";
   data.forEach(function(story) {
     var article = document.createElement('article');
     var title = document.createElement('h2');

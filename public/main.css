@@ -20,14 +20,14 @@ header {
 
 #article-type {
   width: 30em;
-  height: 1em;
+  height: 0.5em;
   border-radius: 3em;
   border: 1px solid grey;
   margin: 1em;
   outline: none;
   font-size: 1.2em;
   font-family: "helvetica neue";
-  padding: 0.5em;
+  padding: 0.7em;
 }
 
 #article-type:focus {
@@ -35,7 +35,7 @@ header {
 }
 
 #search-button {
-  width: 10em;
+  width: 8em;
   height: 2em;
   font-family: "futura";
   font-size: 1em;
@@ -67,13 +67,17 @@ article {
   font-family: georgia;
   font-size: 1.1em;
   max-width: 30em;
-  padding: 0.7em;
+  padding: 1em;
   align-content: center;
   text-align: center;
 }
 
+h2 {
+  margin-top: 0;
+}
+
 img {
-  max-height: 10em;
+  max-width: 20em;
   margin: 1.3em auto 0.5em auto;
 }
 
@@ -91,13 +95,13 @@ a {
   margin: auto;
   padding: 1em 0.2em;
   border-radius: 0.3em;
-  width: 28em;
-  height: 1em;
+  width: 20em;
+  height: 0.7em;
 }
 
 a:hover {
   text-decoration: underline;
   background-color: white;
   color: rgb(0, 29, 109);
-  border: 0.1em solid rgb(0, 29, 109);
+  border: 0.03em solid rgb(0, 29, 109);
 }
